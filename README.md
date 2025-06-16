@@ -6,7 +6,7 @@ Este repositório contém três programas em C que fazem parte de um sistema par
 
 * **Programa 1 (`programa1.c`)**: Organiza dados de um arquivo bruto, separando leituras por sensor e ordenando-as por timestamp.
 * **Programa 2 (`programa2.c`)**: Consulta a leitura de um sensor em um instante específico usando busca binária.
-* **Programa 3 (`programa3.c` e `main.c`)**: Gera um arquivo de teste com leituras aleatórias para sensores, com timestamps dentro de um intervalo definido.
+* **Programa 3 (`programa3` e `sensores.h`)**: Gera um arquivo de teste com leituras aleatórias para sensores, com timestamps dentro de um intervalo definido.
 
 ---
 
@@ -26,9 +26,9 @@ Este repositório contém três programas em C que fazem parte de um sistema par
 
 ## Requisitos
 
-* Compilador GCC (ou compatível).
-* Bibliotecas padrão do C (`stdlib.h`, `stdio.h`, `string.h`, `time.h`).
-* Sistema operacional compatível (Windows, Linux ou macOS).
+* Compilador GCC (ou compatível) com suporte a C11
+* Bibliotecas padrão do C (`stdlib.h`, `stdio.h`, `string.h`, `time.h`)
+* Sistema operacional compatível (Windows, Linux ou macOS)
 
 ---
 
@@ -70,13 +70,13 @@ Processa um arquivo bruto de leituras, separa por sensor e gera arquivos ordenad
 ./programa1 <arquivo_de_entrada>
 ```
 
-- `<arquivo_de_entrada>`: arquivo contendo linhas no formato:
+* `<arquivo_de_entrada>`: arquivo contendo linhas no formato:
 
   ```
   <TIMESTAMP> <ID_SENSOR> <VALOR>
   ```
 
-- Saída: arquivos `sensor1.txt`, `sensor2.txt`, `sensor3.txt` e `sensor4.txt` com leituras em ordem crescente de timestamp.
+* Saída: arquivos `sensor1.txt`, `sensor2.txt`, `sensor3.txt` e `sensor4.txt` com leituras em ordem crescente de timestamp.
 
 ---
 
@@ -88,8 +88,8 @@ Consulta a leitura mais próxima de um instante para um sensor específico.
 ./programa2 <ID_SENSOR> <dia> <mes> <ano> <hora> <min> <seg>
 ```
 
-- `<ID_SENSOR>`: nome do sensor (ex.: `sensor1`)
-- `<dia> <mes> <ano> <hora> <min> <seg>`: data e hora da consulta
+* `<ID_SENSOR>`: nome do sensor (ex.: `sensor1`)
+* `<dia> <mes> <ano> <hora> <min> <seg>`: data e hora da consulta
 
 Exemplo:
 
@@ -114,10 +114,10 @@ Gera um arquivo de teste (`leituras.txt`) com leituras aleatórias para os senso
 ./programa3 <dia1> <mes1> <ano1> <hora1> <min1> <seg1> <dia2> <mes2> <ano2> <hora2> <min2> <seg2> <sensor1> <tipo1> [<sensor2> <tipo2> ...]
 ```
 
-- `<dia1> <mes1> <ano1> <hora1> <min1> <seg1>`: data e hora de início do intervalo
-- `<dia2> <mes2> <ano2> <hora2> <min2> <seg2>`: data e hora de fim do intervalo
-- `<sensorX>`: nome do sensor (string sem espaços)
-- `<tipoX>`: tipo de dado para as amostras (`int`, `float`, `bool`, `string`)
+* `<dia1> <mes1> <ano1> <hora1> <min1> <seg1>`: data e hora de início do intervalo
+* `<dia2> <mes2> <ano2> <hora2> <min2> <seg2>`: data e hora de fim do intervalo
+* `<sensorX>`: nome do sensor (string sem espaços)
+* `<tipoX>`: tipo de dado para as amostras (`int`, `float`, `bool`, `string`)
 
 Exemplo:
 
@@ -140,5 +140,3 @@ Saída: arquivo `leituras.txt` no formato:
 * Busca binária: o Programa 2 ordena as leituras antes e utiliza busca binária para eficiência.
 
 ---
-
-*Entrega prevista em 16 de junho de 2025 às 22:00 pelo AVA.*
