@@ -1,0 +1,14 @@
+# Binários
+programa1.exe
+programa2.exe
+programa3/programa3
+
+# Arquivos gerados
+leituras.txt
+sensor1.txt
+sensor2.txt
+sensor3.txt
+sensor4.txt
+
+# Editor/IDE
+.vscode/
